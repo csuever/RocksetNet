@@ -38,6 +38,8 @@ namespace RocksetNet.Data
 
     public class DeleteDocumentData
     {
-        public string _id { get; set; }
+
+        [JsonProperty("_id")]
+        public string Id { get; set; }
     }
 }

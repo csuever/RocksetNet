@@ -20,19 +20,32 @@ namespace RocksetNet.Data
     }
     public class ApiKeyResponse
     {
-        public ApiKeyResponseData data { get; set; }
+        [JsonProperty("data")]
+        public ApiKeyResponseData Data { get; set; }
     }
     public class ApiKeyResponses
     {
-        public List<ApiKeyResponseData> data { get; set; }
+        [JsonProperty("data")]
+        public List<ApiKeyResponseData> Data { get; set; }
     }
     public class ApiKeyResponseData
     {
-        public string created_at { get; set; }
-        public string name { get; set; }
-        public string key { get; set; }
-        public string last_acccess_time { get; set; }
-        public string created_by { get; set; }
-        public string state { get; set; }
+        [JsonProperty("created_at")]
+        public string DateCreated { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("key")]
+        public string Key { get; set; }
+
+        [JsonProperty("last_access_time")]
+        public DateTime LastAccessed { get; set; }
+
+        [JsonProperty("created_by")]
+        public string CreatedBy { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
     }
 }

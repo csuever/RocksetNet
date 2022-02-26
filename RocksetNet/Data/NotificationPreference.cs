@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace RocksetNet.Data
 {
     public class NotificationPreference
     {
-        public string notificationType { get; set; }
+
+        [JsonProperty("notificationType")]
+        public string NotificationType { get; set; }
     }
 
     public class NotificationPreferenceResponse
     {
-        public List<NotificationPreference> data { get; set; }
+        [JsonProperty("data")]
+        public List<NotificationPreference> Data { get; set; }
     }
 }

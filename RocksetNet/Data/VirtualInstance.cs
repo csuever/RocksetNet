@@ -3,30 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
 namespace RocksetNet.Data
 {
     public class VirtualInstance
     {
-        public string new_size { get; set; }
-        public string new_type { get; set; }
-        public bool monitoring_enabled { get; set; }
+        [JsonProperty("new_size")]
+        public string NewSize { get; set; }
+
+        [JsonProperty("new_type")]
+        public string NewType { get; set; }
+
+        [JsonProperty("monitoring_enabled")]
+        public bool Monitoring { get; set; }
     }
     public class VirtualInstanceResponses
     {
-        public List<VirtualInstanceResponseData> data { get; set; }
+        [JsonProperty("data")]
+        public List<VirtualInstanceResponseData> Data { get; set; }
     }
 
-    public class VirtualInstanceResponse { 
-        public VirtualInstanceResponseData data { get; set; }
+    public class VirtualInstanceResponse 
+    {
+
+        [JsonProperty("data")]
+        public VirtualInstanceResponseData Data { get; set; }
     }
     public class VirtualInstanceResponseData
     {
-        public string? state { get; set; }
-        public string? current_size { get; set; }
-        public string? desired_size { get; set; }
-        public string? last_updated { get; set; }
-        public int? estimated_switch_duration_minutes { get; set; }
-        public string id { get; set; }
+
+        [JsonProperty("state")]
+        public string? State { get; set; }
+
+        [JsonProperty("current_size")]
+        public string? CurrentSize { get; set; }
+
+        [JsonProperty("desired_size")]
+        public string? DesiredSize { get; set; }
+
+        [JsonProperty("last_updated")]
+        public DateTime? LastUpdated { get; set; }
+
+        [JsonProperty("estimated_switch_duration_minutes")]
+        public int? EstimatedSwitchDuration { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace RocksetNet.Data
 {
@@ -12,108 +13,218 @@ namespace RocksetNet.Data
 
     public class Mask
     {
-        public Args args { get; set; }
+        [JsonProperty("args")]
+        public Args Args { get; set; }
     }
 
     public class Mapping
     {
-        public List<object> input_path { get; set; }
-        public Mask mask { get; set; }
+        [JsonProperty("input_path")]
+        public List<object> InputPath { get; set; }
+
+        [JsonProperty("mask")]
+        public Mask Mask { get; set; }
     }
     public class Status
     {
-        public DateTime first_processed_at { get; set; }
-        public int records_processed { get; set; }
-        public DateTime last_processed_at { get; set; }
-        public string state { get; set; }
-        public DateTime last_consumed_time { get; set; }
-        public int num_documents_processed { get; set; }
-        public List<Partition> partitions { get; set; }
-        public DateTime scan_start_time { get; set; }
-        public DateTime scan_end_time { get; set; }
-        public int scan_records_processed { get; set; }
-        public int scan_total_records { get; set; }
-        public DateTime stream_last_processed_at { get; set; }
-        public List<KafkaPartition> kafka_partitions { get; set; }
-        public DateTime stream_last_insert_processed_at { get; set; }
-        public DateTime stream_last_update_processed_at { get; set; }
-        public DateTime stream_last_delete_processed_at { get; set; }
-        public int stream_records_inserted { get; set; }
-        public int stream_records_updated { get; set; }
-        public int stream_records_deleted { get; set; }
-        public string message { get; set; }
-        public string last_processed_item { get; set; }
-        public int total_processed_items { get; set; }
+
+        [JsonProperty("first_processed_at")]
+        public DateTime FirstProcessed { get; set; }
+
+        [JsonProperty("records_processed")]
+        public int RecordsProcessed { get; set; }
+
+        [JsonProperty("last_processed_at")]
+        public DateTime LastProcessed { get; set; }
+        [JsonProperty("staet")]
+        public string State { get; set; }
+
+        [JsonProperty("last_consumed_time")]
+        public DateTime LastConsumed { get; set; }
+
+        [JsonProperty("num_documents_processed")]
+        public int DocumentsProcessed { get; set; }
+
+        [JsonProperty("partitions")]
+        public List<Partition> Partitions { get; set; }
+
+        [JsonProperty("scan_start_time")]
+        public DateTime ScanStartTime { get; set; }
+
+        [JsonProperty("scan_end_time")]
+        public DateTime ScanEndTime { get; set; }
+
+        [JsonProperty("scan_records_processed")]
+        public int ScanRecordsProcessed { get; set; }
+
+        [JsonProperty("scan_total_records")]
+        public int ScanTotalRecords { get; set; }
+
+        [JsonProperty("stream_last_processed_at")]
+        public DateTime StreamLastProcessed { get; set; }
+
+        [JsonProperty("kafka_partitions")]
+        public List<KafkaPartition> KafkaPartitions { get; set; }
+
+        [JsonProperty("stream_last_insert_processed_at")]
+        public DateTime StreamLastInsert { get; set; }
+
+        [JsonProperty("stream_last_update_processed_at")]
+        public DateTime StreamLastUpdate { get; set; }
+
+        [JsonProperty("stream_last_delete_processed_at")]
+        public DateTime StreamLastDelete { get; set; }
+
+        [JsonProperty("stream_records_inserted")]
+        public int StreamRecordsInserted { get; set; }
+
+        [JsonProperty("stream_records_updated")]
+        public int StreamRecordsUpdated { get; set; }
+
+        [JsonProperty("stream_records_deleted")]
+        public int StreamRecordsDeleted { get; set; }
+
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("last_processed_item")]
+        public string LastProcessedItem { get; set; }
+
+        [JsonProperty("total_processed_items")]
+        public int TotalItemsProcessed { get; set; }
     }
     public class Stats
     {
-        public int? doc_count { get; set; }
-        public int? purged_doc_count { get; set; }
-        public double? fill_progress { get; set; }
-        public long? last_queried_ms { get; set; }
-        public long? last_updated_ms { get; set; }
-        public int? total_size { get; set; }
-        public int? total_index_size { get; set; }
-        public int? row_index_size { get; set; }
-        public int? column_index_size { get; set; }
-        public int? inverted_index_size { get; set; }
-        public int? range_index_size { get; set; }
-        public int? purged_doc_size { get; set; }
-        public int? bytes_inserted { get; set; }
-        public int? bytes_overwritten { get; set; }
+        [JsonProperty("doc_count")]
+        public int? DocumentCount { get; set; }
+
+        [JsonProperty("purged_doc_count")]
+        public int? PurgedDocumentCount { get; set; }
+
+        [JsonProperty("fill_progress")]
+        public double? FillProgress { get; set; }
+
+        [JsonProperty("last_queried_ms")]
+        public long? LastQueriedMs { get; set; }
+
+        [JsonProperty("last_updated_ms")]
+        public long? LastUpdatedMs { get; set; }
+
+        [JsonProperty("total_size")]
+        public int? TotalSize { get; set; }
+
+        [JsonProperty("total_index_size")]
+        public int? TotalIndexSize { get; set; }
+
+        [JsonProperty("row_index_size")]
+        public int? RowIndexSize { get; set; }
+
+        [JsonProperty("column_index_size")]
+        public int? ColumnIndexSize { get; set; }
+
+        [JsonProperty("inverted_index_size")]
+        public int? InvertedIndexSize { get; set; }
+
+        [JsonProperty("range_index_size")]
+        public int? RangeIndexSize { get; set; }
+
+        [JsonProperty("purged_doc_size")]
+        public int? PurgedDocumentSize { get; set; }
+
+        [JsonProperty("bytes_inserted")]
+        public int? BytesInserted { get; set; }
+
+        [JsonProperty("bytes_overwritten")]
+        public int? BytesOverwritten { get; set; }
     }
 
     public class InputField
     {
-        public string field_name { get; set; }
-        public string if_missing { get; set; }
-        public bool is_drop { get; set; }
-        public string param { get; set; }
+        [JsonProperty("field_name")]
+        public string FieldName { get; set; }
+
+        [JsonProperty("if_missing")]
+        public string IfMissing { get; set; }
+
+        [JsonProperty("is_drop")]
+        public bool IsDrop { get; set; }
+
+        [JsonProperty("param")]
+        public string Parameter { get; set; }
     }
 
     public class OutputField
     {
-        public string field_name { get; set; }
-        public string value { get; set; }
-        public string on_error { get; set; }
+        [JsonProperty("field_name")]
+        public string FieldName { get; set; }
+
+        [JsonProperty("value")]
+        public string Value { get; set; }
+
+        [JsonProperty("on_error")]
+        public string OnError { get; set; }
     }
 
     public class FieldMapping
     {
-        public string name { get; set; }
-        public bool is_drop_all_fields { get; set; }
-        public List<InputField> input_fields { get; set; }
-        public OutputField output_field { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("is_drop_all_fields")]
+        public bool DropAllFields { get; set; }
+
+        [JsonProperty("input_fields")]
+        public List<InputField> InputFields { get; set; }
+
+        [JsonProperty("output_field")]
+        public OutputField OutputField { get; set; }
     }
 
     public class FieldMappingQuery
     {
-        public string sql { get; set; }
+        [JsonProperty("sql")]
+        public string Sql { get; set; }
     }
 
     public class Items
     {
-        public string type { get; set; }
+        [JsonProperty("type")]
+        public string Type { get; set; }
     }
 
     public class Keys
     {
-        public string type { get; set; }
-        public string example { get; set; }
-        public string description { get; set; }
-        public Items items { get; set; }
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("example")]
+        public string Example { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("items")]
+        public Items Items { get; set; }
     }
 
     public class ClusteringKey
     {
-        public string field_name { get; set; }
-        public string type { get; set; }
-        public Keys keys { get; set; }
+        [JsonProperty("field_name")]
+        public string FieldName { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("keys")]
+        public Keys Keys { get; set; }
     }
     public class FieldSchema
     {
-        public string field_name { get; set; }
-        public string field_options { get; set; }
+        [JsonProperty("field_name")]
+        public string FieldName { get; set; }
+
+        [JsonProperty("field_options")]
+        public string FieldOptions { get; set; }
     }
 
     public class InvertedIndexGroupEncodingOptions
@@ -122,68 +233,136 @@ namespace RocksetNet.Data
 
     public class FieldPartition
     {
-        public string field_name { get; set; }
-        public string type { get; set; }
-        public Keys keys { get; set; }
+
+        [JsonProperty("field_name")]
+        public string FieldName { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("keys")]
+        public Keys Keys { get; set; }
     }
     public class EventTimeInfo
     {
-        public string field { get; set; }
-        public string format { get; set; }
-        public string time_zone { get; set; }
+        [JsonProperty("field")]
+        public string Field { get; set; }
+
+        [JsonProperty("format")]
+        public string Format { get; set; }
+
+        [JsonProperty("time_zone")]
+        public string TimeZone { get; set; }
     }
     public class CreateCollection
     {
-        public string name { get; set; }
-        public string description { get; set; }
-        public List<Source> sources { get; set; }
-        public int retention_secs { get; set; }
-        public int time_partition_resolution_secs { get; set; }
-        public bool insert_only { get; set; }
-        public EventTimeInfo event_time_info { get; set; }
-        public List<FieldMapping> field_mappings { get; set; }
-        public FieldMappingQuery field_mapping_query { get; set; }
-        public List<ClusteringKey> clustering_key { get; set; }
-        public List<FieldSchema> field_schemas { get; set; }
-        public InvertedIndexGroupEncodingOptions inverted_index_group_encoding_options { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("sources")]
+        public List<Source> Sources { get; set; }
+
+        [JsonProperty("retention_secs")]
+        public int Retention { get; set; }
+
+        [JsonProperty("time_partition_resolution_secs")]
+        public int TimePartitionResolution { get; set; }
+
+        [JsonProperty("insert_only")]
+        public bool InsertOnly { get; set; }
+
+        [JsonProperty("event_time_info")]
+        public EventTimeInfo EventTime { get; set; }
+
+        [JsonProperty("field_mappings")]
+        public List<FieldMapping> FieldMappings { get; set; }
+
+        [JsonProperty("field_mapping_query")]
+        public FieldMappingQuery FieldMappingQuery { get; set; }
+
+        [JsonProperty("clustering_key")]
+        public List<ClusteringKey> ClusteringKeys { get; set; }
+
+        [JsonProperty("field_schemas")]
+        public List<FieldSchema> FieldSchemas { get; set; }
+
+        [JsonProperty("inverted_index_group_encoding_options")]
+        public InvertedIndexGroupEncodingOptions InvertedIndexGroupEncodingOptions { get; set; }
 
         public CreateCollection()
         {
-            sources = new List<Source>();
-            field_mappings = new List<FieldMapping>();
-            clustering_key = new List<ClusteringKey>();
-            field_schemas = new List<FieldSchema>();
+            Sources = new List<Source>();
+            FieldMappings = new List<FieldMapping>();
+            ClusteringKeys = new List<ClusteringKey>();
+            FieldSchemas = new List<FieldSchema>();
         }
     }
 
     public class CollectionResponses
     {
-        public List<CollectionResponseData> data { get; set; }
+        [JsonProperty("data")]
+        public List<CollectionResponseData> Data { get; set; }
     }
     public class CollectionResponse
     {
-        public CollectionResponseData data { get; set; }
+        [JsonProperty("data")]
+        public CollectionResponseData Data { get; set; }
     }
     public class CollectionResponseData
     {
-            public string created_at { get; set; }
-            public string created_by { get; set; }
-            public string name { get; set; }
-            public string description { get; set; }
-            public string workspace { get; set; }
-            public string status { get; set; }
-            public List<Source> sources { get; set; }
-            public Stats stats { get; set; }
-            public int retention_secs { get; set; }
-            public List<FieldMapping> field_mappings { get; set; }
-            public FieldMappingQuery field_mapping_query { get; set; }
-            public List<ClusteringKey> clustering_key { get; set; }
-            public List<Alias> aliases { get; set; }
-            public List<FieldSchema> field_schemas { get; set; }
-            public InvertedIndexGroupEncodingOptions inverted_index_group_encoding_options { get; set; }
-            public List<FieldPartition> fieldPartitions { get; set; }
-        }
-    
+
+        [JsonProperty("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        [JsonProperty("created_by")]
+        public string CreatedBy { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+        [JsonProperty("workspace")]
+        public string Workspace { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        [JsonProperty("sources")]
+        public List<Source> Sources { get; set; }
+
+        [JsonProperty("stats")]
+        public Stats Statistics { get; set; }
+
+        [JsonProperty("retention_secs")]
+        public int Retention { get; set; }
+
+        [JsonProperty("field_mappings")]
+        public List<FieldMapping> FieldMappings { get; set; }
+
+        [JsonProperty("field_mapping_query")]
+        public FieldMappingQuery FieldMappingQuery { get; set; }
+
+        [JsonProperty("clustering_key")]
+        public List<ClusteringKey> ClusteringKeys { get; set; }
+
+        [JsonProperty("field_schemas")]
+        public List<FieldSchema> FieldSchemas { get; set; }
+
+        [JsonProperty("inverted_index_group_encoding_options")]
+        public InvertedIndexGroupEncodingOptions InvertedIndexGroupEncodingOptions { get; set; }
+
+        [JsonProperty("aliases")]
+        public List<Alias> Aliases { get; set; }
+
+        [JsonProperty("fieldPartitions")]
+        public List<FieldPartition> FieldPartitions { get; set; }
+    }
+
 
 
 }

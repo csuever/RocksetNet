@@ -643,7 +643,7 @@ namespace RocksetNet
         {
             try
             {
-                return await _client.Request($"/v1/orgs/self/ws/{workspace}/views/{view.name}")
+                return await _client.Request($"/v1/orgs/self/ws/{workspace}/views/{view.Name}")
                     .PostJsonAsync(view)
                     .ReceiveJson<ViewResponse>();
             }

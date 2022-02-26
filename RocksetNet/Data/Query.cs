@@ -42,8 +42,14 @@ namespace RocksetNet.Data
 
     public class Parameters
     {
-        public string name { get; set; }
-        public ParameterType type { get; set; }
-        public string value { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("type")]
+        public ParameterType Type { get; set; }
+
+        [JsonProperty("value")]
+        public string Value { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,153 +9,307 @@ namespace RocksetNet.Data
 {
     public class Source
     {
-        public string integration_name { get; set; }
+        [JsonProperty("integration_name")]
+        public string Name { get; set; }
+
+        [JsonProperty("s3")]
         public S3 s3 { get; set; }
-        public Kinesis kinesis { get; set; }
-        public Gcs gcs { get; set; }
-        public AzureBlobStorage azure_blob_storage { get; set; }
-        public AzureServiceBus azure_service_bus { get; set; }
-        public AzureEventHub azure_event_hub { get; set; }
-        public Redshift redshift { get; set; }
-        public Dynamodb dynamodb { get; set; }
-        public FileUpload file_upload { get; set; }
-        public Kafka kafka { get; set; }
-        public Mongodb mongodb { get; set; }
-        public Status status { get; set; }
-        public FormatParams format_params { get; set; }
+
+        [JsonProperty("kinesis")]
+        public Kinesis Kinesis { get; set; }
+
+        [JsonProperty("gcs")]
+        public Gcs Gcs { get; set; }
+
+        [JsonProperty("azure_blob_storage")]
+        public AzureBlobStorage AzureBlobStorage { get; set; }
+
+        [JsonProperty("azure_service_bus")]
+        public AzureServiceBus AzureServiceBus { get; set; }
+
+        [JsonProperty("azure_event_hub")]
+        public AzureEventHub AzureEventHub { get; set; }
+
+        [JsonProperty("redshift")]
+        public Redshift Redshift { get; set; }
+
+        [JsonProperty("dynamodb")]
+        public Dynamodb DynamoDB { get; set; }
+
+        [JsonProperty("file_upload")]
+        public FileUpload FileUpload { get; set; }
+
+        [JsonProperty("kafka")]
+        public Kafka Kafka { get; set; }
+
+        [JsonProperty("mongodb")]
+        public Mongodb MongoDB { get; set; }
+
+        [JsonProperty("status")]
+        public Status Status { get; set; }
+
+        [JsonProperty("format_params")]
+        public FormatParams FormatParams { get; set; }
     }
 
     public class AzureServiceBus
     {
-        public string topic { get; set; }
-        public string subscription { get; set; }
-        public Status status { get; set; }
+        [JsonProperty("topic")]
+        public string Topic { get; set; }
+
+        [JsonProperty("subscription")]
+        public string Subscription { get; set; }
+
+        [JsonProperty("status")]
+        public Status Status { get; set; }
     }
 
     public class Partition
     {
-        public int partition_number { get; set; }
-        public int partition_offset { get; set; }
-        public int offset_lag { get; set; }
+        [JsonProperty("partition_number")]
+        public int PartitionNumber { get; set; }
+
+        [JsonProperty("partition_offset")]
+        public int PartitionOffset { get; set; }
+
+        [JsonProperty("offset_lag")]
+        public int OffsetLag { get; set; }
     }
 
     public class AzureEventHub
     {
-        public string hub_id { get; set; }
-        public string offset_reset_policy { get; set; }
-        public Status status { get; set; }
+        [JsonProperty("hub_id")]
+        public string Id { get; set; }
+
+        [JsonProperty("offset_reset_policy")]
+        public string OffsetResetPolicy { get; set; }
+
+        [JsonProperty("status")]
+        public Status Status { get; set; }
     }
 
     public class Redshift
     {
-        public string database { get; set; }
-        public string schema { get; set; }
-        public string table_name { get; set; }
-        public string incremental_field { get; set; }
+        [JsonProperty("database")]
+        public string Database { get; set; }
+
+        [JsonProperty("schema")]
+        public string Schema { get; set; }
+
+        [JsonProperty("table_name")]
+        public string TableName { get; set; }
+
+        [JsonProperty("incremental_field")]
+        public string IncrementalField { get; set; }
     }
 
     public class CurrentStatus
     {
-        public double initial_dump_completion_percentage { get; set; }
-        public string state { get; set; }
-        public DateTime stream_last_processed_at { get; set; }
+
+        [JsonProperty("initial_dump_completion_percentage")]
+        public double InitialDumpCompletion { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
+
+        [JsonProperty("stream_last_processed_at")]
+        public DateTime StreamLastProcessed { get; set; }
     }
 
     public class Dynamodb
     {
-        public string aws_region { get; set; }
+
+        [JsonProperty("aws_region")]
+        public string Region { get; set; }
+
+        [JsonProperty("table_name")]
         public string table_name { get; set; }
-        public CurrentStatus current_status { get; set; }
-        public int rcu { get; set; }
-        public Status status { get; set; }
+
+        [JsonProperty("current_status")]
+        public CurrentStatus CurrentStatus { get; set; }
+
+        [JsonProperty("rcu")]
+        public int Rcu { get; set; }
+
+        [JsonProperty("status")]
+        public Status Status { get; set; }
     }
 
     public class FileUpload
     {
-        public string file_name { get; set; }
-        public int file_size { get; set; }
-        public DateTime file_upload_time { get; set; }
+
+        [JsonProperty("file_name")]
+        public string Name { get; set; }
+
+        [JsonProperty("file_size")]
+        public int Size { get; set; }
+
+        [JsonProperty("file_upload_time")]
+        public DateTime Uploadtime { get; set; }
     }
 
     public class KafkaPartition
     {
-        public int partition_number { get; set; }
-        public int partition_offset { get; set; }
-        public int offset_lag { get; set; }
+
+        [JsonProperty("partition_number")]
+        public int Number { get; set; }
+
+        [JsonProperty("partition_offset")]
+        public int Offset { get; set; }
+
+        [JsonProperty("offset_lag")]
+        public int Lag { get; set; }
     }
 
     public class Kafka
     {
-        public string kafka_topic_name { get; set; }
-        public Status status { get; set; }
+
+        [JsonProperty("kafka_topic_name")]
+        public string TopicName { get; set; }
+
+        [JsonProperty("kafka_topic_name")]
+        public Status Status { get; set; }
     }
 
     public class Mongodb
     {
-        public string database_name { get; set; }
-        public string collection_name { get; set; }
-        public Status status { get; set; }
+        [JsonProperty("database_name")]
+        public string Database { get; set; }
+
+        [JsonProperty("collection_name")]
+        public string Collection { get; set; }
+
+        [JsonProperty("status")]
+        public Status Status { get; set; }
     }
 
     public class Csv
     {
-        public bool firstLineAsColumnNames { get; set; }
-        public string separator { get; set; }
-        public string encoding { get; set; }
-        public List<string> columnNames { get; set; }
-        public List<string> columnTypes { get; set; }
-        public string quoteChar { get; set; }
-        public string escapeChar { get; set; }
+
+        [JsonProperty("firstLineAsColumnNames")]
+        public bool FirstLineAsColumn { get; set; }
+
+        [JsonProperty("separator")]
+        public string Separator { get; set; }
+
+        [JsonProperty("encoding")]
+        public string Encoding { get; set; }
+
+        [JsonProperty("columnNames")]
+        public List<string> ColumnNames { get; set; }
+
+        [JsonProperty("columnTypes")]
+        public List<string> ColumnTypes { get; set; }
+
+        [JsonProperty("quoteChar")]
+        public string QuoteChar { get; set; }
+
+        [JsonProperty("escapeChar")]
+        public string EscapeChar { get; set; }
     }
 
     public class Xml
     {
-        public string root_tag { get; set; }
-        public string encoding { get; set; }
-        public string doc_tag { get; set; }
-        public string value_tag { get; set; }
-        public string attribute_prefix { get; set; }
+
+        [JsonProperty("root_tag")]
+        public string RootTag { get; set; }
+
+        [JsonProperty("encoding")]
+        public string Encoding { get; set; }
+
+        [JsonProperty("doc_tag")]
+        public string DocTag { get; set; }
+
+        [JsonProperty("value_tag")]
+        public string ValueTag { get; set; }
+
+        [JsonProperty("attribute_prefix")]
+        public string AttributePrefix { get; set; }
     }
 
     public class FormatParams
     {
-        public bool json { get; set; }
-        public Csv csv { get; set; }
-        public Xml xml { get; set; }
+
+        [JsonProperty("json")]
+        public bool IsJson { get; set; }
+
+        [JsonProperty("csv")]
+        public Csv Csv { get; set; }
+
+        [JsonProperty("xml")]
+        public Xml Xml { get; set; }
     }
 
     public class S3
     {
-        public string access_key { get; set; }
-        public string secret_access { get; set; }
-        public string prefix { get; set; }
-        public string pattern { get; set; }
-        public string region { get; set; }
-        public string bucket { get; set; }
-        public List<string> prefixes { get; set; }
-        public string format { get; set; }
-        public List<Mapping> mappings { get; set; }
+
+        [JsonProperty("access_key")]
+        public string AccessKey { get; set; }
+
+        [JsonProperty("secret_access")]
+        public string SecretKey { get; set; }
+
+        [JsonProperty("prefix")]
+        public string Prefix { get; set; }
+
+        [JsonProperty("pattern")]
+        public string Pattern { get; set; }
+
+        [JsonProperty("region")]
+        public string Region { get; set; }
+
+        [JsonProperty("bucket")]
+        public string Bucket { get; set; }
+
+        [JsonProperty("prefixes")]
+        public List<string> Prefixes { get; set; }
+
+        [JsonProperty("format")]
+        public string Format { get; set; }
+
+        [JsonProperty("mappings")]
+        public List<Mapping> Mappings { get; set; }
     }
 
     public class Kinesis
     {
-        public string aws_region { get; set; }
-        public string stream_name { get; set; }
-        public List<object> dms_primary_key { get; set; }
-        public string offset_reset_policy { get; set; }
+
+        [JsonProperty("aws_region")]
+        public string Region { get; set; }
+
+        [JsonProperty("stream_name")]
+        public string StreamName { get; set; }
+
+        [JsonProperty("dms_primary_key")]
+        public List<object> DmsPrimayKey { get; set; }
+
+        [JsonProperty("offset_reset_policy")]
+        public string OffsetResetPolicy { get; set; }
     }
 
     public class Gcs
     {
-        public string bucket { get; set; }
-        public string prefix { get; set; }
-        public string pattern { get; set; }
+
+        [JsonProperty("bucket")]
+        public string Bucket { get; set; }
+
+        [JsonProperty("prefix")]
+        public string Prefix { get; set; }
+
+        [JsonProperty("pattern")]
+        public string Pattern { get; set; }
     }
 
     public class AzureBlobStorage
     {
-        public string container { get; set; }
-        public string prefix { get; set; }
-        public string pattern { get; set; }
+
+        [JsonProperty("bucket")]
+        public string Bucket { get; set; }
+
+        [JsonProperty("prefix")]
+        public string Prefix { get; set; }
+
+        [JsonProperty("pattern")]
+        public string Pattern { get; set; }
     }
 }

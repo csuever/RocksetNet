@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace RocksetNet.Data
 {
@@ -12,10 +13,12 @@ namespace RocksetNet.Data
 
     public class IntegrationResponse
     {
-        public Source data { get; set; }
+        [JsonProperty("data")]
+        public Source Data { get; set; }
     }
     public class IntegrationResponses
     {
-        public List<Source> data { get; set; }
+        [JsonProperty("data")]
+        public List<Source> Data { get; set; }
     }
 }

@@ -3,32 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace RocksetNet.Data
 {
     public class User
     {
-        public string email { get; set; }
-        public List<string> roles { get; set; }
+
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
+        [JsonProperty("roles")]
+        public List<string> Roles { get; set; }
     }
 
     public class UserResponse
     {
-        public UserResponseData data { get; set; }
+        [JsonProperty("data")]
+        public UserResponseData Data { get; set; }
     }
 
     public class UserResponses
     {
-        public List<UserResponseData> data { get; set; }
+
+        [JsonProperty("data")]
+        public List<UserResponseData> Data { get; set; }
     }
 
     public class UserResponseData
     {
-        public string created_at { get; set; }
-        public string email { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }   
-        public List<string> roles { get; set; }
-        public string state { get; set; }
+
+        [JsonProperty("created_at")]
+        public DateTime CreatedAt { get; set; }
+
+        [JsonProperty("email")]
+        public string Email { get; set; }
+
+        [JsonProperty("first_name")]
+        public string FirstName { get; set; }
+
+        [JsonProperty("last_name")]
+        public string LastName { get; set; }
+
+        [JsonProperty("roles")]
+        public List<string> Roles { get; set; }
+
+        [JsonProperty("state")]
+        public string State { get; set; }
     }
 }
