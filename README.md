@@ -6,6 +6,11 @@ C# wrapper for Rockset API
 * The project targets .NET 6.0
 * Rockset API Reference: https://rockset.com/docs/rest-api/
 
+## To Do
+* Query Lamdas - All
+* User - Notification Preferences
+* Roles - All
+
 ## Getting API key
 API keys are created and managed in the Rockset Console
 
