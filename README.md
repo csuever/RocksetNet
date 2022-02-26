@@ -27,4 +27,3 @@ var collection = new CreateCollection()
         Console.WriteLine(ex.StatusCode);
     }
 ```
-For a bit more detailed examples, see the Examples project.
