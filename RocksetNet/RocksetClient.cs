@@ -93,7 +93,7 @@ namespace RocksetNet
         {
             try
             {
-                return await _client.Request($" / v1/orgs/self/ws/{workspace}/collections/{collection}/docs")
+                return await _client.Request($"/v1/orgs/self/ws/{workspace}/collections/{collection}/docs")
                 .PostJsonAsync(new
                 {
                     data = data
