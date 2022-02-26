@@ -9,9 +9,6 @@ namespace RocksetNet.Data
 {
     public class Alias
     {
-        [JsonProperty("workspace")]
-        public string Workspace { get; set; }
-
         [JsonProperty("name")]
         public string Name { get; set; }
 

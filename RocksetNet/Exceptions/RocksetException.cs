@@ -10,25 +10,13 @@ namespace RocksetNet.Exceptions
     public class RocksetException : Exception
     {
         public int? StatusCode { get; set; }
-        public RocksetException() : base()
-        {
-        }
-
-        public RocksetException(string? message, int? statusCode) : base(message)
-        {
-        }
-
-        public RocksetException(string format, int statusCode, params object[] args) : base(string.Format(format, args))
-        {
-            this.StatusCode = statusCode;
-        }
-
-        public RocksetException(string message, int statusCode, Exception innerException) : base(message, innerException)
-        {
-            this.StatusCode = statusCode;
-        }
-
-        public RocksetException(string format, int statusCode, Exception innerException, params object[] args) : base(string.Format(format, args), innerException)
+        public RocksetException() : base() { }
+        public RocksetException(string message) : base(message) { }
+        public RocksetException(string format, params object[] args) : base(string.Format(format, args)) { }
+        public RocksetException(string message,  Exception innerException) : base(message, innerException) {}
+        public RocksetException(string format, Exception innerException, params object[] args) : base(string.Format(format, args), innerException) { }
+        public RocksetException(string message, int? statusCode)
+                : base(message)
         {
             this.StatusCode = statusCode;
         }
