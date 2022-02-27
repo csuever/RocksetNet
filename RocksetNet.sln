@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32127.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RocksetNet", "RocksetNet\RocksetNet.csproj", "{541D347E-B8F2-437D-8E52-006C20CBE314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocksetNet.Example", "RocksetNet.Example\RocksetNet.Example.csproj", "{DDF10B08-ECDE-4BDF-A3EB-E00AEB630475}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{541D347E-B8F2-437D-8E52-006C20CBE314}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{541D347E-B8F2-437D-8E52-006C20CBE314}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{541D347E-B8F2-437D-8E52-006C20CBE314}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDF10B08-ECDE-4BDF-A3EB-E00AEB630475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDF10B08-ECDE-4BDF-A3EB-E00AEB630475}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDF10B08-ECDE-4BDF-A3EB-E00AEB630475}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDF10B08-ECDE-4BDF-A3EB-E00AEB630475}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
