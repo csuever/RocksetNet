@@ -136,6 +136,18 @@ namespace RocksetNet.Data
 
         [JsonProperty("bytes_overwritten")]
         public int? BytesOverwritten { get; set; }
+
+        [JsonProperty("last_executed")]
+        public DateTime? LastExecuted { get; set; }
+
+        [JsonProperty("last_executed_by")]
+        public string? LastExecutedBy { get; set; }
+
+        [JsonProperty("last_execution_error")]
+        public DateTime? LastExecutionError { get; set; }
+
+        [JsonProperty("last_execution_error_message")]
+        public string? LastExecutionErrorMessage { get; set; }
     }
 
     public class InputField

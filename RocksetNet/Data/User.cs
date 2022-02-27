@@ -17,20 +17,12 @@ namespace RocksetNet.Data
         public List<string> Roles { get; set; }
     }
 
-    public class UserResponse
-    {
-        [JsonProperty("data")]
-        public UserResponseData Data { get; set; }
-    }
-
     public class UserResponses
     {
-
-        [JsonProperty("data")]
-        public List<UserResponseData> Data { get; set; }
+        public List<UserResponse> users { get; set; }
     }
 
-    public class UserResponseData
+    public class UserResponse
     {
 
         [JsonProperty("created_at")]
