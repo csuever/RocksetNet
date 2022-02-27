@@ -1,5 +1,5 @@
 # RocksetNet
-C# wrapper for Rockset API
+Unofficial C# wrapper for Rockset API
 
 ## Notes
 * The API is maintained and provided by Rockset (https://rockset.com). You must have an account with Rockset.
