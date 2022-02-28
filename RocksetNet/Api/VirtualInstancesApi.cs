@@ -15,7 +15,7 @@ namespace RocksetNet.Api
         /// <summary>
         /// Retrieve all virtual instances in an organization.
         /// </summary>
-        public async Task<VirtualInstanceResponses> ListVirtualInstances()
+        public async Task<VirtualInstanceResponses> List()
         {
             try
             {
@@ -31,7 +31,7 @@ namespace RocksetNet.Api
         /// Get details about a virtual instance.
         /// </summary>
         /// <param name="virtualInstanceId">uuid of the virtual instance</param>
-        public async Task<VirtualInstanceResponse> GetVirtualInstance(string virtualInstanceId)
+        public async Task<VirtualInstanceResponse> Get(string virtualInstanceId)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace RocksetNet.Api
         /// </summary>
         /// <param name="virtualInstanceId">uuid of the virtual instance</param>
         /// <param name="instance">Instance details</param>
-        public async Task<VirtualInstanceResponse> UpdateVirtualInstance(string virtualInstanceId, VirtualInstance instance)
+        public async Task<VirtualInstanceResponse> Update(string virtualInstanceId, VirtualInstance instance)
         {
             try
             {

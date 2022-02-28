@@ -23,12 +23,11 @@ namespace RocksetNet.Configuration
         /// <param name="region">Region of your organization</param>
         public RocksetApiConfiguration(string apiKey, Region region = Region.USEast)
         {
-            ApiKey = apiKey;
-
             if (string.IsNullOrEmpty(ApiKey))
             {
                 throw new RocksetException("Api key cannot be empty");
             }
+            ApiKey = apiKey;
 
             switch (region)
             {
