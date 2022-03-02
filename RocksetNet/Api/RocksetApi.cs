@@ -12,7 +12,7 @@ namespace RocksetNet.Api
         {
             _configuration = configuration;
             _client = new FlurlClient(configuration.BaseUrl);
-            _client.WithHeader("Authorization", $"ApiKey {configuration.ApiKey}");
+            _client.WithHeader("Authorization", $"ApiKey {configuration.ApiKey}");            
         }
 
         public RocksetApiConfiguration GetConfiguration()
